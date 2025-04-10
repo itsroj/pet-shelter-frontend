@@ -1,12 +1,19 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
+import { Login } from './Login';
+import { SignUp } from './SignUp';
 
 export const Navbar = () => {
   const [opened, { open, close }] = useDisclosure(false);
+  const [isLogin, setIsLogin] = useState(true);
+  
+  const switchToSignUp = () => setIsLogin(false);
+  const switchToLogin = () => setIsLogin(true);
+  
   return (
     <nav>
       <NavLink to="/"
@@ -25,12 +32,19 @@ export const Navbar = () => {
       <NavLink to="/support" className={({ isActive }) => (isActive ? "active-link" : "")}>
         Support Us
       </NavLink>
-      <Modal opened={opened} onClose={close}><h1>Title</h1></Modal>
+      <Modal 
+        opened={opened} 
+        onClose={close} 
+        title={isLogin ? "Login" : "Sign Up"}
+      >
+        {isLogin ? 
+          <Login onClose={close} onSwitchToSignUp={switchToSignUp} /> : 
+          <SignUp onClose={close} onSwitchToLogin={switchToLogin} />
+        }
+      </Modal>
       
-      {/*<NavLink className={({ isActive }) => (isActive ? "active-link" : "")}>*/}
-        <FontAwesomeIcon icon={faUser} onClick={open}/> 
-      {/*</NavLink>*/}
+      <FontAwesomeIcon icon={faUser} onClick={open}/> 
     </nav>
-  )
-}
+  );
+};
 

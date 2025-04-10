@@ -1,0 +1,48 @@
+.login-container {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .password-field {
+    margin-top: 16px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+  
+  .signup-text {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+.signup-container {
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.email-field,
+.password-field {
+  margin-top: 16px;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 16px;
+}
