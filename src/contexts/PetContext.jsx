@@ -17,7 +17,7 @@ const PetContextWrapper = ({ children }) => {
     return currentUser && currentUser.role === "admin";
   };
   
-  console.log("this is curr user", currentUser)
+  // console.log("this is curr user", currentUser)
   useEffect(() => {
     getAllPets();
   }, []);
@@ -27,7 +27,7 @@ const PetContextWrapper = ({ children }) => {
       .get(`${import.meta.env.VITE_API_URL}/pet/all-pets`)
       .then((res) => {
         console.log("all pets", res);
-        setPets(res.data);
+        setPets(res.data.allPets);
         // setError(null);
       })
       .catch((err) => {
@@ -54,6 +54,8 @@ const PetContextWrapper = ({ children }) => {
   async function handleCreatePet(event, petData) {
     event.preventDefault();
     
+
+    console.log("pet create function triggered!")
     // Check for admin permission
     if (!isAdmin()) {
     //   setError("Admin permission required to create pets");
@@ -62,6 +64,8 @@ const PetContextWrapper = ({ children }) => {
     
     // Create form data for image upload
     const myFormData = new FormData();
+
+    console.log("pet data inside context:", petData)
     
     // Add pet properties to form data matching the schema
     myFormData.append("type", petData.type);          // "cat" or "dog"
@@ -76,6 +80,7 @@ const PetContextWrapper = ({ children }) => {
     
     myFormData.append("description", petData.description); // required
     
+    console.log("my form data before image upload:",myFormData)
     // Add image if provided (required field)
     if (event.target.image.files[0]) {
       const image = event.target.image.files[0];
@@ -85,6 +90,7 @@ const PetContextWrapper = ({ children }) => {
       return;
     }
 
+    console.log("my form data after image upload:", myFormData)
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/pet/create`,

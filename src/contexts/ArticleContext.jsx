@@ -10,6 +10,7 @@ const ArticleContextWrapper = ({ children }) => {
   const [error, setError] = useState(null);
   const nav = useNavigate();
   const { currentUser, isLoggedIn } = useContext(AuthContext);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   // Check if current user has user role
   const isUser = () => {
@@ -22,7 +23,7 @@ const ArticleContextWrapper = ({ children }) => {
 
   function getAllArticles() {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/articles`)
+      .get(`${import.meta.env.VITE_API_URL}/article/all-articles`)
       .then((res) => {
         console.log("all articles", res);
         setArticles(res.data);
@@ -31,6 +32,21 @@ const ArticleContextWrapper = ({ children }) => {
       .catch((err) => {
         console.log(err);
         // setError("Failed to fetch articles");
+      });
+  }
+
+  function getOneArticle(articleId) {
+    return axios
+      .get(`${import.meta.env.VITE_API_URL}/article/one-article/${articleId}`)
+      .then((res) => {
+        console.log("one article", res);
+        setSelectedArticle(res.data); // Store in separate state
+        return res.data; // Return for component use
+      })
+      .catch((err) => {
+        console.log(err);
+        setError("Failed to fetch article");
+        throw err; // Rethrow to allow error handling in components
       });
   }
 
@@ -46,8 +62,7 @@ const ArticleContextWrapper = ({ children }) => {
     // Create form data for image upload
     const myFormData = new FormData();
     
-    // Add article properties to form data matching the schema
-    myFormData.append("image", articleData.image);          
+    // Add article properties to form data matching the schema        
     myFormData.append("title", articleData.title);        
     myFormData.append("description", articleData.description);          
     myFormData.append("author", articleData.author);           
@@ -63,7 +78,7 @@ const ArticleContextWrapper = ({ children }) => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/articles/create`,
+        `${import.meta.env.VITE_API_URL}/article/create`,
         myFormData,
         {
           headers: {
@@ -104,7 +119,7 @@ const ArticleContextWrapper = ({ children }) => {
 
     axios
       .patch(
-        `${import.meta.env.VITE_API_URL}/information/${articleId}`,
+        `${import.meta.env.VITE_API_URL}/article/update-article/${articleId}`,
         myFormData,
         {
           headers: {
@@ -135,7 +150,7 @@ const ArticleContextWrapper = ({ children }) => {
 
     axios
       .delete(
-        `${import.meta.env.VITE_API_URL}/articles/${articleId}`,
+        `${import.meta.env.VITE_API_URL}/article/delete-article/${articleId}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -159,11 +174,13 @@ const ArticleContextWrapper = ({ children }) => {
       value={{
         articles,
         setArticles,
+        selectedArticle,
         handleCreateArticle,
         handleUpdateArticle,
         handleDeleteArticle,
         getAllArticles,
         error,
+        getOneArticle,
         isUser: isUser()
       }}
     >
