@@ -5,13 +5,16 @@ import { BrowserRouter } from 'react-router-dom'
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { AuthContextWrapper } from './contexts/AuthContext';
+import { PetContextWrapper } from './contexts/PetContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MantineProvider>
       <BrowserRouter>
         <AuthContextWrapper>
-          <App />
+          <PetContextWrapper>
+            <App />
+          </PetContextWrapper>
         </AuthContextWrapper>
       </BrowserRouter>
     </MantineProvider>

@@ -7,6 +7,7 @@ import { Modal } from '@mantine/core';
 import { Login } from './Login';
 import { SignUp } from './SignUp';
 import { AuthContext } from '../contexts/AuthContext';
+import { HomepagePage } from '../pages/HomepagePage';
 
 export const Navbar = () => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -25,7 +26,8 @@ export const Navbar = () => {
         className={({ isActive }) => (isActive ? "active-link" : "")}>
         Homepage
       </NavLink>
-      <NavLink to="/pet-adoption" className={({ isActive }) => (isActive ? "active-link" : "")}>
+      <a href="#pet-adoption-section">Pet Adoption</a>
+      <NavLink to="/#adoption-section" className={({ isActive }) => (isActive ? "active-link" : "")}>
         Pet Adoption
       </NavLink>
       <NavLink to="/information" className={({ isActive }) => (isActive ? "active-link" : "")}>
