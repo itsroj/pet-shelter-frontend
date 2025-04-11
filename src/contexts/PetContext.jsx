@@ -8,6 +8,7 @@ const PetContext = createContext();
 const PetContextWrapper = ({ children }) => {
   const [pets, setPets] = useState([]);
   const [error, setError] = useState(null);
+  const [selectedPet, setSelectedPet] = useState(null);
   const nav = useNavigate();
   const { currentUser, isLoggedIn } = useContext(AuthContext);
 
@@ -16,13 +17,14 @@ const PetContextWrapper = ({ children }) => {
     return currentUser && currentUser.role === "admin";
   };
   
+  console.log("this is curr user", currentUser)
   useEffect(() => {
     getAllPets();
   }, []);
 
   function getAllPets() {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/pets`)
+      .get(`${import.meta.env.VITE_API_URL}/pet/all-pets`)
       .then((res) => {
         console.log("all pets", res);
         setPets(res.data);
@@ -31,6 +33,21 @@ const PetContextWrapper = ({ children }) => {
       .catch((err) => {
         console.log(err);
         // setError("Failed to fetch pets");
+      });
+  }
+
+  function getOnePet(petId) {
+    return axios
+      .get(`${import.meta.env.VITE_API_URL}/pet/one-pet/${petId}`)
+      .then((res) => {
+        console.log("one pet", res);
+        setSelectedPet(res.data); // Store in separate state
+        return res.data; // Return for component use
+      })
+      .catch((err) => {
+        console.log(err);
+        setError("Failed to fetch pet");
+        throw err; // Rethrow to allow error handling in components
       });
   }
 
@@ -70,7 +87,7 @@ const PetContextWrapper = ({ children }) => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/pets/create`,
+        `${import.meta.env.VITE_API_URL}/pet/create`,
         myFormData,
         {
           headers: {
@@ -110,8 +127,8 @@ const PetContextWrapper = ({ children }) => {
     }
 
     axios
-      .put(
-        `${import.meta.env.VITE_API_URL}/pets/${petId}`,
+      .patch(
+        `${import.meta.env.VITE_API_URL}/pet/update-pet/${petId}`,
         myFormData,
         {
           headers: {
@@ -142,7 +159,7 @@ const PetContextWrapper = ({ children }) => {
 
     axios
       .delete(
-        `${import.meta.env.VITE_API_URL}/pets/${petId}`,
+        `${import.meta.env.VITE_API_URL}/pet/delete-pet/${petId}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -166,10 +183,12 @@ const PetContextWrapper = ({ children }) => {
       value={{
         pets,
         setPets,
+        selectedPet,
         handleCreatePet,
         handleUpdatePet,
         handleDeletePet,
         getAllPets,
+        getOnePet, 
         error,
         isAdmin: isAdmin()
       }}

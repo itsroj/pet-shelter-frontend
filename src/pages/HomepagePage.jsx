@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
+import { PetContext } from '../contexts/PetContext';
 
 export const HomepagePage = () => {
+
+  const { pets } = useContext(PetContext)
+  console.log(pets)
+
   return (
     <div>
 (* um 1490; † 1589 in Tre­vi­glio, Ita­lien) war ein Mai­län­der Ty­po­graf, Schrift­stel­ler und Fran­zis­ka­ner, der durch die er­ste schrift­liche geo­me­t­ri­sche Spe­zi­fi­ka­tion ei­ner Schrift­art für la­tei­nische Ver­sa­lien be­kannt wur­de. Er kann als Pio­nier der mathe­ma­tischen Typo­gra­fie an­ge­se­hen wer­den. In dem Werk Mu­seo No­va­re­se des Mai­län­der His­tori­kers Lazzaro Agos­tino Cot­ta (1645–1719) von 1701 wird Fran­ces­co Tor­niel­lo als Ex­per­te in Geo­me­trie und Arith­me­tik be­schrie­ben, der als Schrift­stel­ler tä­tig war. Als ein­zi­ges Werk über­lie­fert ist je­doch nur ein Buch mit dem Ti­tel Ope­ra del mo­do de fa­re le lit­tere maius­cole an­tique, das 1517 in Mai­land er­schien. Da­rin de­fi­nier­te Tor­niel­lo ein 18×18-Raster, das als Koor­di­na­ten­sys­tem dient. Die dop­pel­te Sei­ten­län­ge ei­nes Ras­ter­fel­des wurde da­bei als Punkt de­fi­niert. Dies ist die erste be­kannte De­fi­ni­tion ei­nes Punk­tes als typo­gra­fische Maß­ein­heit. Es ist nicht an­zu­neh­men, dass Pierre Si­mon Four­nier das Werk von Tor­niel­lo kann­te, als er 1737 eben­falls den Punkt als typo­gra­fische Maß­ein­heit ein­führte. Der Punkt als Maß­ein­heit und das Ras­ter er­leich­ter­ten Tor­niel­lo sehr die geo­me­trische Spezi­fi­kation in Schrift­form. – Zum Artikel …
