@@ -73,7 +73,8 @@ const PetContextWrapper = ({ children }) => {
     myFormData.append("name", petData.name);          // required
     myFormData.append("age", petData.age);            // required
     myFormData.append("gender", petData.gender);      // "male" or "female"
-    
+    myFormData.append("createdBy", currentUser._id);
+
     if (petData.size) {
       myFormData.append("size", petData.size);        // "small", "medium", or "big" (optional)
     }
