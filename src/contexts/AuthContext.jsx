@@ -56,6 +56,7 @@ const AuthContextWrapper = ({ children }) => {
           setCurrentUser,
           isLoading,
           isLoggedIn,
+          setIsLoggedIn,
           authenticateUser,
           handleLogout,
         }}

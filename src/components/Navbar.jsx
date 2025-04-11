@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -6,13 +6,18 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 import { Login } from './Login';
 import { SignUp } from './SignUp';
+import { AuthContext } from '../contexts/AuthContext';
 
 export const Navbar = () => {
   const [opened, { open, close }] = useDisclosure(false);
-  const [isLogin, setIsLogin] = useState(true);
-  
-  const switchToSignUp = () => setIsLogin(false);
-  const switchToLogin = () => setIsLogin(true);
+  // const [isLogin, setIsLogin] = useState(true);
+  const { isLoggedIn, setIsLoggedIn, authenticateUser } = useContext(AuthContext)
+  const switchToSignUp = () => setIsLoggedIn(false);
+  const switchToLogin = () => setIsLoggedIn(true);
+  const handleLogOut = async () => {
+    localStorage.removeItem("authToken")
+    await authenticateUser();
+  }
   
   return (
     <nav>
@@ -35,15 +40,16 @@ export const Navbar = () => {
       <Modal 
         opened={opened} 
         onClose={close} 
-        title={isLogin ? "Login" : "Sign Up"}
+        title={isLoggedIn ? "Login" : "Sign Up"}
       >
-        {isLogin ? 
+        {isLoggedIn ? 
           <Login onClose={close} onSwitchToSignUp={switchToSignUp} /> : 
           <SignUp onClose={close} onSwitchToLogin={switchToLogin} />
         }
       </Modal>
-      
+      {isLoggedIn ? <button onClick={handleLogOut}>logout</button>:
       <FontAwesomeIcon icon={faUser} onClick={open}/> 
+      }
     </nav>
   );
 };

@@ -31,11 +31,7 @@ export const SignUp = ({ onClose, onSwitchToLogin }) => {
     }
     
     axios
-      .post(`${API_URL}/auth/signup`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      })
+      .post(`${API_URL}/auth/signup`, {username, email, password},)
       .then((res) => {
         console.log("user created in the DB", res);
         onClose();
