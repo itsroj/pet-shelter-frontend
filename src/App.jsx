@@ -12,6 +12,7 @@ import { InformationPage } from "./pages/InformationPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { SupportUsPage } from "./pages/SupportUsPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { PetDetailsPage } from "./pages/PetDetailsPage";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/support" element={<SupportUsPage />} />
         <Route path="/information" element={<InformationPage />} />
+        <Route path="/pet-details/:petId" element={<PetDetailsPage />} />
       </Routes>
       <Footer />
     </>

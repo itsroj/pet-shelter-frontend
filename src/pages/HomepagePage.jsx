@@ -38,6 +38,43 @@ Was geschah am 11. April?
 
 Archiv Weitere exzellente und lesenswerte Artikel sowie informative Listen  RSS-Feed
 Was geschah am 11. April?
+Was geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als GründWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreieWas geschah am 11. April?
+191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
+1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
+1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
+1945 – Amerikanische Truppen befreie
 191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
 1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
 1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.

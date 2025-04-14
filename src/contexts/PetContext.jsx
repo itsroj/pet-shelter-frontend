@@ -112,7 +112,9 @@ const PetContextWrapper = ({ children }) => {
     }
   }
 
-  function handleUpdatePet(petId, updatedData) {
+  function handleUpdatePet(event, petId, updatedData) {
+    //first stop the form from refreshing the page
+    event.preventDefault();
     // Check for admin permission
     if (!isAdmin()) {
     //   setError("Admin permission required to update pets");

@@ -20,14 +20,14 @@ export const CatPage = () => {
         <div>
           {pets.filter(pet => pet.type === "cat").map((cat) => (
             <div key={cat._id}>
-              <Link to={`/pet/${cat._id}`}>
+              <Link to={`/pet-details/${cat._id}`}>
                 <img src={cat.image} alt={`${cat.name} - ${cat.breed}`} />
               </Link>
               <h3>{cat.name}</h3>
               <p>Breed: {cat.breed}</p>
               <p>Age: {cat.age}</p>
               <p>Gender: {cat.gender}</p>
-              
+              <Link to={`/pet-details/${cat._id}`}>Details</Link>
               {/* Show additional admin controls if user is admin
               {isAdmin && (
                 <div className="admin-controls">
@@ -41,7 +41,8 @@ export const CatPage = () => {
           ))}
         </div>
       )}
-      <AddPet setShowForm={setShowForm} />
+      {isAdmin && (<AddPet setShowForm={setShowForm} />)}
+      
     </div>
   )
 }

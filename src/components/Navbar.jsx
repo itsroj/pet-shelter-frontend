@@ -26,10 +26,7 @@ export const Navbar = () => {
         className={({ isActive }) => (isActive ? "active-link" : "")}>
         Homepage
       </NavLink>
-      <a href="#pet-adoption-section">Pet Adoption</a>
-      <NavLink to="/#adoption-section" className={({ isActive }) => (isActive ? "active-link" : "")}>
-        Pet Adoption
-      </NavLink>
+      <Link to="/#pet-adoption-section">Pet Adoption</Link>
       <NavLink to="/information" className={({ isActive }) => (isActive ? "active-link" : "")}>
         Lost & Found
       </NavLink>
