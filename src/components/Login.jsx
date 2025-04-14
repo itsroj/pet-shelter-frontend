@@ -29,7 +29,7 @@ export const Login = ({ onClose, onSwitchToSignUp }) => {
       })
       .then(() => {
         onClose(); // Close the modal on success
-        nav("/profile");
+        // nav("/profile");
       })
       .catch((err) => {
         console.log(err);

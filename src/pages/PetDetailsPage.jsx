@@ -5,7 +5,7 @@ import { EditPet } from '../components/EditPet';
 
 
 export const PetDetailsPage = () => {
-    const [pet, setPet] = useState({});
+    const [pet, setPet] = useState(null);
     const { petId } = useParams();
     const { pets, isAdmin, handleDeletePet } = useContext(PetContext);
     const [showEditForm, setShowEditForm] = useState(false);
@@ -20,9 +20,10 @@ export const PetDetailsPage = () => {
     useEffect(() => {
         const onePet = pets.find((pet) => pet._id === petId)
         setPet(onePet)
-    },[])
+        console.log(onePet)
+    },[pets, petId]);
 
-    if (!pets) {
+    if (!pet) {
         return <p>loading...</p>
     }
 
@@ -30,43 +31,42 @@ export const PetDetailsPage = () => {
         <div>
             <h1>hi</h1>
             <h2>{pet && pet.name}</h2>
-            <button
-                                    type="button"
-                                    className="updateProductBtn"
-                                    onClick={() => setShowEditForm(true)}
-                                  >
-                                    Edit
-                                  </button>
-                                  {showEditForm ? <EditPet /> : null}
-            {/* {pets.map((onePet) => {
-                return (
-                  <div key={onePet.id}>
-                    <h3>{onePet.name}</h3>
-                    <img src={onePet.image} alt={onePet.name} />
-                    <p>{onePet.type}, {onePet.breed}, {onePet.size}</p>
-                    <p>{onePet.gender}</p>
-                    <p>{onePet.age}</p>
-                    <p>{onePet.description}</p>
-                    <p>{onePet.createdBy}, {onePet.createdAt}</p>
-                    {isAdmin && (
-                              <div className="admin-controls">
-                               
-                                <button
-                                    type="button"
-                                    className="updateProductBtn"
-                                    onClick={() => handleEdit(onePet.id)}
-                                  >
-                                    Edit
-                                  </button>
-                              
-                                <button className="delete-btn" onClick={() => handleDeletePet(cat._id)}>
-                                  Delete
-                                </button>
-                              </div>
-                            )}
-                  </div>
-                )
-            })} */}
+            <img src={pet.image} alt={pet.name} />
+            <p>Type: {pet.type}, Breed: {pet.breed} {pet.type === "dog" && `, Size: ${pet.size}`}</p>
+            <p>Gender: {pet.gender}</p>
+            <p>Age: {pet.age}</p>
+            <p>Description: {pet.description}</p>
+            <p>Created By: {pet.createdBy.username}, Created At: {pet.createdAt.slice(0,10)}</p>
+            
+
+
+            {isAdmin && (
+                <div className="admin-controls">
+                    <button
+                        type="button"
+                        onClick={() => setShowEditForm(true)}
+                    >
+                        Edit
+                    </button>
+                    <button 
+                        onClick={() => handleDeletePet(pet._id)}
+                    >
+                        Delete
+                    </button>
+                </div>
+            )}
+            
+
+
+{showEditForm ? (
+  <EditPet 
+    setShowEditForm={setShowEditForm}
+    onUpdateSuccess={() => {
+      setShowEditForm(false); 
+    }}
+  />
+) : null}
+
         </div>
     )
 }

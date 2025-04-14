@@ -14,7 +14,7 @@ const ArticleContextWrapper = ({ children }) => {
 
   // Check if current user has user role
   const isUser = () => {
-    return currentUser && currentUser.role === "admin" || "user";
+    return currentUser && (currentUser.role === "admin" || currentUser.role === "user");
   };
   
   useEffect(() => {
@@ -96,12 +96,13 @@ const ArticleContextWrapper = ({ children }) => {
     }
   }
 
-  function handleUpdateArticle(articleId, updatedData) {
+  function handleUpdateArticle(event, articleId, updatedData) {
+    event.preventDefault();
     // Check for admin permission
-    if (!isUser()) {
+    // if (!isUser()) {
     //   setError("Admin permission required to update articles");
-      return;
-    }
+    //   return;
+    // }
 
     const myFormData = new FormData();
     
@@ -124,6 +125,7 @@ const ArticleContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            "Content-Type": "multipart/form-data"
           }
         }
       )

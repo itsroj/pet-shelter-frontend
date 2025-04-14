@@ -6,10 +6,10 @@ import { AddPet } from '../components/AddPet';
 export const CatPage = () => {
   const { pets, isAdmin, handleDeletePet } = useContext(PetContext)
   
-  console.log("Cat pets:", pets);
+  // console.log("Cat pets:", pets);
 
   const setShowForm = () => {
-    console.log("just a test prop!")
+    // console.log("just a test prop!")
   }
   return (
     <div>
@@ -28,15 +28,6 @@ export const CatPage = () => {
               <p>Age: {cat.age}</p>
               <p>Gender: {cat.gender}</p>
               <Link to={`/pet-details/${cat._id}`}>Details</Link>
-              {/* Show additional admin controls if user is admin
-              {isAdmin && (
-                <div className="admin-controls">
-                  <Link to={`/edit-pet/${cat._id}`} className="edit-btn">Edit</Link>
-                  <button className="delete-btn" onClick={() => handleDeletePet(cat._id)}>
-                    Delete
-                  </button>
-                </div>
-              )} */}
             </div>
           ))}
         </div>

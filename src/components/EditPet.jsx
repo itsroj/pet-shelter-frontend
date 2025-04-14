@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { useState } from "react";
 import { PetContext } from '../contexts/PetContext';
 import { useParams } from "react-router-dom";
 
@@ -16,23 +15,27 @@ export const EditPet = ({ setShowEditForm, onUpdateSuccess}) => {
     const [gender, setGender] = useState ("");
     const [size, setSize] = useState ("");
     const [description, setDescription] = useState ("");
-    const [image, setImage] = useState ("");
-    const [createdBy, setCreatedBy] = useState ("");
+    const [image, setImageFile] = useState();
 
+    const handleImageChange = (event) => {
+      if (event.target.files[0]) {
+        setImageFile(event.target.files[0]);
+      }
+    };
 
     useEffect(() => {
         axios
           .get(`${import.meta.env.VITE_API_URL}/pet/one-pet/${petId}`)
           .then(({ data }) => {
-            console.log("here is the data for the update:", import.meta.env.VITE_APP_URL, data);
+            console.log("here is the data for the update:", import.meta.env.VITE_API_URL, data);
             setName(data.name);
             setType(data.type);
             setBreed(data.breed);
             setAge(data.age);
             setDescription(data.description);
             setSize(data.size);
-            setImage(data.image);
-            setCreatedBy(data.createdBy);
+            setImageFile(data.image);
+            setGender(data.gender);
           })
           .catch((err) => console.log(err));
       }, [petId]);
@@ -41,7 +44,12 @@ export const EditPet = ({ setShowEditForm, onUpdateSuccess}) => {
 
   return (
     <div>
-      <form onSubmit={(event) => handleUpdatePet(event, petId, {name, type, breed, age, gender, size, description, image, createdBy})}>
+        <form onSubmit={async (event) => {
+            handleUpdatePet(event, petId, {name, type, breed, age, image, gender, size, description})
+            setShowEditForm(false);
+}}>
+
+    
             <h3>Edit Pet</h3>
             <h6 className="closeButton" onClick={() => setShowEditForm(false)}>x</h6>
             
@@ -127,18 +135,12 @@ export const EditPet = ({ setShowEditForm, onUpdateSuccess}) => {
                 />
             </label>
             
-            {/* Hidden input for createdBy - user won't see this */}
-            <input
-                type="hidden"
-                name="createdBy"
-                value={createdBy}
-            />
-
             <label>
                 Image:
                 <input
                     type="file"
                     name="image"
+                    onChange={handleImageChange}
                 />
             </label>
 

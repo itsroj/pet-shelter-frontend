@@ -6,6 +6,7 @@ import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { AuthContextWrapper } from './contexts/AuthContext';
 import { PetContextWrapper } from './contexts/PetContext';
+import { ArticleContextWrapper } from './contexts/ArticleContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,7 +14,9 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <AuthContextWrapper>
           <PetContextWrapper>
-            <App />
+            <ArticleContextWrapper>
+              <App />
+            </ArticleContextWrapper>
           </PetContextWrapper>
         </AuthContextWrapper>
       </BrowserRouter>

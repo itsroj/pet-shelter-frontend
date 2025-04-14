@@ -17,19 +17,13 @@ export const AddPet = ({setShowForm})=> {
     const [createdBy, setCreatedBy] = useState("");
 
 
-    // Set the createdBy field automatically when currentUser changes
-    useEffect(() => {
-        if (currentUser && currentUser._id) {
-            setCreatedBy(currentUser._id);
-        }
-    }, [currentUser]);
-
-    // // Set size to "small" by default when cat is selected
+    // set the createdBy field automatically
     // useEffect(() => {
-    //     if (type === "cat") {
-    //         setSize("small");
+    //     if (currentUser && currentUser._id) {
+    //         setCreatedBy(currentUser._id);
     //     }
-    // }, [type]);
+    // }, [currentUser]);
+
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -165,7 +159,7 @@ export const AddPet = ({setShowForm})=> {
                 />
             </label>
 
-            <button className="submitButton" type="submit">
+            <button type="submit">
                 Add Pet
             </button>
         </form>
