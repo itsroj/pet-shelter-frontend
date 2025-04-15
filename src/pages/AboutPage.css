@@ -1,0 +1,170 @@
+.about-page {
+  max-width: 100%;
+}
+
+.about-hero {
+  background-color: var(--primary);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-section {
+  padding: 40px 0;
+  margin-bottom: 40px;
+}
+
+.about-section h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-section h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-content.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-text {
+  line-height: 1.6;
+}
+
+.about-text h3 {
+  color: var(--primary);
+  margin: 25px 0 15px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+.about-text ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-text ul li {
+  margin-bottom: 10px;
+}
+
+.facility-list, .values-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.team-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Gallery */
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.gallery-image {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Contact section */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-intro {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+.contact-item h4 {
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.contact-cta {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .about-content,
+  .about-content.reverse,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-content.reverse .team-image {
+    order: -1;
+  }
+}

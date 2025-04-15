@@ -14,7 +14,7 @@ export const HomepagePage = () => {
   }, [getAllPets]);
   
   // newest animal in shelter (last 4)
-  const recentPets = pets?.slice(0, 4) || [];
+  const recentPets = pets?.slice(-4) || [];
   
   return (
     <div className="homepage">

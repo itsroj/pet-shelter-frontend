@@ -65,7 +65,7 @@ const ArticleContextWrapper = ({ children }) => {
     // Add article properties to form data matching the schema        
     myFormData.append("title", articleData.title);        
     myFormData.append("description", articleData.description);          
-    myFormData.append("author", articleData.author);           
+    myFormData.append("author", currentUser._id); // Use the user ID instead of the whole object
     
     // Add image if provided (required field)
     if (event.target.image.files[0]) {
@@ -83,16 +83,16 @@ const ArticleContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            "Content-Type": "multipart/form-data"  // Add this line
           }
         }
       );
       console.log("article created", data);
       setArticles([data, ...articles]);
-    //   setError(null);
       nav("/information");
     } catch (error) {
-      console.log(error);
-    //   setError("Failed to create article");
+            console.log(error);
+      //   setError("Failed to create article");
     }
   }
 
@@ -115,7 +115,7 @@ const ArticleContextWrapper = ({ children }) => {
     
     // Add image if provided
     if (updatedData.image) {
-      myFormData.append("imageUrl", updatedData.image);
+      myFormData.append("image", updatedData.image);
     }
 
     axios
