@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import "./AboutPage.css";
+// import { aboutUsImg } from '../images/cat-image.jpg'
 
 export const AboutPage = () => {
   return (
@@ -55,17 +56,23 @@ export const AboutPage = () => {
           <h2>About Us</h2>
           <div className="about-content reverse">
             <div className="team-image">
-              <img src="/images/shelter-team.jpg" alt="Our dedicated team" />
+              {/* <img src= {aboutUsImg} alt="Our team" /> */}
             </div>
             
             <div className="about-text">
               <h3>Our Story</h3>
               <p>Hello and welcome!
 We're Rojda and Sosha — two aspiring web developers on the final stretch of our full-time Web Development Bootcamp journey.
-For our capstone project, we wanted to create something that truly matters — not just to us, but to the world around us. That’s how "Once Upon a Paw" Shelter came to life.
-We believe that every animal deserves a loving home, and that shelters can be more than just temporary places — they can be warm, inviting spaces filled with hope. Sadly, we noticed that many animal shelter websites in Germany lack modern, thoughtful design. So we set out to change that.
-This project is our tribute to the animals who wait patiently for a second chance — and to the people who open their hearts and homes to them. Through intuitive functionality and a soft, welcoming design, our goal was to build a platform where adoption feels personal, emotional, and easy.
-Whether you're here to adopt, volunteer, or simply browse the faces of those looking for love — we're so happy to have you here. Thank you for being part of this mission.</p>
+For our capstone project, we wanted to create something that truly matters — not just to us, but to the world around us.
+That’s how "Once Upon a Paw" Shelter came to life.
+We believe that every animal deserves a loving home, and that shelters can be more than just temporary places — they can 
+be warm, inviting spaces filled with hope. Sadly, we noticed that many animal shelter websites in Germany lack modern, 
+thoughtful design. So we set out to change that.
+This project is our tribute to the animals who wait patiently for a second chance — and to the people who open their 
+hearts and homes to them. Through intuitive functionality and a soft, welcoming design, our goal was to build a platform 
+where adoption feels personal, emotional, and easy.
+Whether you're here to adopt, volunteer, or simply browse the faces of those looking for love — we're so happy to have 
+you here. Thank you for being part of this mission.</p>
           
               <h3>Our Mission</h3>
               <p>To rescue, rehabilitate, and rehome animals in need while educating the community on responsible pet ownership and animal welfare.</p>

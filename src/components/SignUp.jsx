@@ -33,9 +33,9 @@ export const SignUp = ({ onClose, onSwitchToLogin }) => {
     axios
       .post(`${API_URL}/auth/signup`, formData,)
       .then((res) => {
-        console.log("user created in the DB", res);
+        // console.log("user created in the DB", res);
         onClose();
-        nav("/login");
+        nav("/");
       })
       .catch((err) => {
         console.log(err);
