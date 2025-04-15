@@ -1,0 +1,302 @@
+:root {
+  --primary: #4b7f52;      
+  --secondary: #8eb69b;    
+  --accent: #5cb85c;       
+  --light: #f5f8f5;        
+  --dark: #2d3d2d;         
+  --success: #5cb85c;      
+  --shadow: 0 4px 6px rgba(45, 61, 45, 0.1); 
+  --radius: 8px;
+}
+
+body {
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: #f7f9f7;  
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.homepage h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Hero-Bereich */
+.hero {
+  background-image: linear-gradient(rgba(45, 61, 45, 0.6), rgba(45, 61, 45, 0.6)), url('/images/hero-pets.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #3d6943;  /* Dunkleres Grün beim Hover */
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--dark);  /* Dunklere Textfarbe für besseren Kontrast */
+}
+
+.btn-secondary:hover {
+  background: #7da588;  /* Dunkleres Salbeigrün beim Hover */
+}
+
+.btn-accent {
+  background: var(--accent);
+}
+
+.btn-accent:hover {
+  background: #4a9c4a;  /* Dunkleres Grün beim Hover */
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-sm {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+/* Über uns Bereich */
+.about-preview {
+  padding: 60px 0;
+  background-color: var(--light);  /* Leicht grünlicher Hintergrund */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Tiere Grid */
+.recent-pets {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.pet-card {
+  background: var(--light);  /* Leicht grünlicher Hintergrund */
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(45, 61, 45, 0.15);  /* Grünlicher Schatten */
+  border-bottom: 3px solid var(--accent);  /* Grüner Akzent beim Hover */
+}
+
+.pet-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.pet-card:hover .pet-image {
+  transform: scale(1.05);
+}
+
+.pet-info {
+  padding: 20px;
+}
+
+.pet-info h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary);  /* Grüner Titel */
+}
+
+.more-pets {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Tiertypen Karten */
+.pet-types {
+  padding: 60px 0;
+  background-color: #e8f0e8;  /* Hellgrüner Hintergrund */
+}
+
+.type-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.type-card {
+  flex: 0 1 300px;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(45, 61, 45, 0.15);
+  border-bottom: 3px solid var(--accent);  /* Grüner Akzent beim Hover */
+}
+
+.type-link {
+  display: block;
+  text-decoration: none;
+  color: var(--dark);
+  text-align: center;
+}
+
+.type-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.cat-image {
+  background-image: url('/images/cat-category.jpg');
+}
+
+.dog-image {
+  background-image: url('/images/dog-category.jpg');
+}
+
+.type-link h3 {
+  margin: 15px 0 5px 0;
+  color: var(--primary);  /* Grüner Titel */
+}
+
+.type-link p {
+  margin: 0 0 15px 0;
+  color: #4d5d4d;  /* Grünlich-grauer Text */
+}
+
+/* Support Call To Action */
+.support-cta {
+  padding: 80px 0;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(45deg, var(--primary), #3d6943);  /* Grüner Farbverlauf */
+}
+
+.support-cta h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.support-cta p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .type-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}

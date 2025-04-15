@@ -1,102 +1,110 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { PetContext } from '../contexts/PetContext';
+import "./Homepage.css"
 
 export const HomepagePage = () => {
-
-  const { pets } = useContext(PetContext)
-  console.log(pets)
-
+  const { pets, getAllPets } = useContext(PetContext);
+  
+  // load all the pets
+  useEffect(() => {
+    if (getAllPets) {
+      getAllPets();
+    }
+  }, [getAllPets]);
+  
+  // newest animal in shelter (last 4)
+  const recentPets = pets?.slice(0, 4) || [];
+  
   return (
-    <div>
-(* um 1490; † 1589 in Tre­vi­glio, Ita­lien) war ein Mai­län­der Ty­po­graf, Schrift­stel­ler und Fran­zis­ka­ner, der durch die er­ste schrift­liche geo­me­t­ri­sche Spe­zi­fi­ka­tion ei­ner Schrift­art für la­tei­nische Ver­sa­lien be­kannt wur­de. Er kann als Pio­nier der mathe­ma­tischen Typo­gra­fie an­ge­se­hen wer­den. In dem Werk Mu­seo No­va­re­se des Mai­län­der His­tori­kers Lazzaro Agos­tino Cot­ta (1645–1719) von 1701 wird Fran­ces­co Tor­niel­lo als Ex­per­te in Geo­me­trie und Arith­me­tik be­schrie­ben, der als Schrift­stel­ler tä­tig war. Als ein­zi­ges Werk über­lie­fert ist je­doch nur ein Buch mit dem Ti­tel Ope­ra del mo­do de fa­re le lit­tere maius­cole an­tique, das 1517 in Mai­land er­schien. Da­rin de­fi­nier­te Tor­niel­lo ein 18×18-Raster, das als Koor­di­na­ten­sys­tem dient. Die dop­pel­te Sei­ten­län­ge ei­nes Ras­ter­fel­des wurde da­bei als Punkt de­fi­niert. Dies ist die erste be­kannte De­fi­ni­tion ei­nes Punk­tes als typo­gra­fische Maß­ein­heit. Es ist nicht an­zu­neh­men, dass Pierre Si­mon Four­nier das Werk von Tor­niel­lo kann­te, als er 1737 eben­falls den Punkt als typo­gra­fische Maß­ein­heit ein­führte. Der Punkt als Maß­ein­heit und das Ras­ter er­leich­ter­ten Tor­niel­lo sehr die geo­me­trische Spezi­fi­kation in Schrift­form. – Zum Artikel …
-
-Archiv Weitere exzellente und lesenswerte Artikel sowie informative Listen  RSS-Feed
-Was geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreien das KZ Buchenwald, in dem bereits Häftlinge nach einem Aufstand die Lager­leitung entmachtet haben.
-1970 – Im Kennedy Space Center startet die Mission Apollo 13 mit dem Ziel der dritten bemannten Mond­landung. Nach einer Explosion im Servi
-(* um 1490; † 1589 in Tre­vi­glio, Ita­lien) war ein Mai­län­der Ty­po­graf, Schrift­stel­ler und Fran­zis­ka­ner, der durch die er­ste schrift­liche geo­me­t­ri­sche Spe­zi­fi­ka­tion ei­ner Schrift­art für la­tei­nische Ver­sa­lien be­kannt wur­de. Er kann als Pio­nier der mathe­ma­tischen Typo­gra­fie an­ge­se­hen wer­den. In dem Werk Mu­seo No­va­re­se des Mai­län­der His­tori­kers Lazzaro Agos­tino Cot­ta (1645–1719) von 1701 wird Fran­ces­co Tor­niel­lo als Ex­per­te in Geo­me­trie und Arith­me­tik be­schrie­ben, der als Schrift­stel­ler tä­tig war. Als ein­zi­ges Werk über­lie­fert ist je­doch nur ein Buch mit dem Ti­tel Ope­ra del mo­do de fa­re le lit­tere maius­cole an­tique, das 1517 in Mai­land er­schien. Da­rin de­fi­nier­te Tor­niel­lo ein 18×18-Raster, das als Koor­di­na­ten­sys­tem dient. Die dop­pel­te Sei­ten­län­ge ei­nes Ras­ter­fel­des wurde da­bei als Punkt de­fi­niert. Dies ist die erste be­kannte De­fi­ni­tion ei­nes Punk­tes als typo­gra­fische Maß­ein­heit. Es ist nicht an­zu­neh­men, dass Pierre Si­mon Four­nier das Werk von Tor­niel­lo kann­te, als er 1737 eben­falls den Punkt als typo­gra­fische Maß­ein­heit ein­führte. Der Punkt als Maß­ein­heit und das Ras­ter er­leich­ter­ten Tor­niel­lo sehr die geo­me­trische Spezi­fi­kation in Schrift­form. – Zum Artikel …
-
-Archiv Weitere exzellente und lesenswerte Artikel sowie informative Listen  RSS-Feed
-Was geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreien das KZ Buchenwald, in dem bereits Häftlinge nach einem Aufstand die Lager­leitung entmachtet haben.
-1970 – Im Kennedy Space Center startet die Mission Apollo 13 mit dem Ziel der dritten bemannten Mond­landung. Nach einer Explosion im Servi(* um 1490; † 1589 in Tre­vi­glio, Ita­lien) war ein Mai­län­der Ty­po­graf, Schrift­stel­ler und Fran­zis­ka­ner, der durch die er­ste schrift­liche geo­me­t­ri­sche Spe­zi­fi­ka­tion ei­ner Schrift­art für la­tei­nische Ver­sa­lien be­kannt wur­de. Er kann als Pio­nier der mathe­ma­tischen Typo­gra­fie an­ge­se­hen wer­den. In dem Werk Mu­seo No­va­re­se des Mai­län­der His­tori­kers Lazzaro Agos­tino Cot­ta (1645–1719) von 1701 wird Fran­ces­co Tor­niel­lo als Ex­per­te in Geo­me­trie und Arith­me­tik be­schrie­ben, der als Schrift­stel­ler tä­tig war. Als ein­zi­ges Werk über­lie­fert ist je­doch nur ein Buch mit dem Ti­tel Ope­ra del mo­do de fa­re le lit­tere maius­cole an­tique, das 1517 in Mai­land er­schien. Da­rin de­fi­nier­te Tor­niel­lo ein 18×18-Raster, das als Koor­di­na­ten­sys­tem dient. Die dop­pel­te Sei­ten­län­ge ei­nes Ras­ter­fel­des wurde da­bei als Punkt de­fi­niert. Dies ist die erste be­kannte De­fi­ni­tion ei­nes Punk­tes als typo­gra­fische Maß­ein­heit. Es ist nicht an­zu­neh­men, dass Pierre Si­mon Four­nier das Werk von Tor­niel­lo kann­te, als er 1737 eben­falls den Punkt als typo­gra­fische Maß­ein­heit ein­führte. Der Punkt als Maß­ein­heit und das Ras­ter er­leich­ter­ten Tor­niel­lo sehr die geo­me­trische Spezi­fi­kation in Schrift­form. – Zum Artikel …
-
-Archiv Weitere exzellente und lesenswerte Artikel sowie informative Listen  RSS-Feed
-Was geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreien das KZ Buchenwald, in dem bereits Häftlinge nach einem Aufstand die Lager­leitung entmachtet haben.
-1970 – Im Kennedy Space Center startet die Mission Apollo 13 mit dem Ziel der dritten bemannten Mond­landung. Nach einer Explosion im Servi(* um 1490; † 1589 in Tre­vi­glio, Ita­lien) war ein Mai­län­der Ty­po­graf, Schrift­stel­ler und Fran­zis­ka­ner, der durch die er­ste schrift­liche geo­me­t­ri­sche Spe­zi­fi­ka­tion ei­ner Schrift­art für la­tei­nische Ver­sa­lien be­kannt wur­de. Er kann als Pio­nier der mathe­ma­tischen Typo­gra­fie an­ge­se­hen wer­den. In dem Werk Mu­seo No­va­re­se des Mai­län­der His­tori­kers Lazzaro Agos­tino Cot­ta (1645–1719) von 1701 wird Fran­ces­co Tor­niel­lo als Ex­per­te in Geo­me­trie und Arith­me­tik be­schrie­ben, der als Schrift­stel­ler tä­tig war. Als ein­zi­ges Werk über­lie­fert ist je­doch nur ein Buch mit dem Ti­tel Ope­ra del mo­do de fa­re le lit­tere maius­cole an­tique, das 1517 in Mai­land er­schien. Da­rin de­fi­nier­te Tor­niel­lo ein 18×18-Raster, das als Koor­di­na­ten­sys­tem dient. Die dop­pel­te Sei­ten­län­ge ei­nes Ras­ter­fel­des wurde da­bei als Punkt de­fi­niert. Dies ist die erste be­kannte De­fi­ni­tion ei­nes Punk­tes als typo­gra­fische Maß­ein­heit. Es ist nicht an­zu­neh­men, dass Pierre Si­mon Four­nier das Werk von Tor­niel­lo kann­te, als er 1737 eben­falls den Punkt als typo­gra­fische Maß­ein­heit ein­führte. Der Punkt als Maß­ein­heit und das Ras­ter er­leich­ter­ten Tor­niel­lo sehr die geo­me­trische Spezi­fi­kation in Schrift­form. – Zum Artikel …
-
-Archiv Weitere exzellente und lesenswerte Artikel sowie informative Listen  RSS-Feed
-Was geschah am 11. April?
-Was geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als GründWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreieWas geschah am 11. April?
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreie
-191 v. Chr. – Auf dem Palatin in Rom wird der dem Kybele- und Attiskult gewidmete Tempel der Magna Mater geweiht.
-1555 – Johanna, seit 1504 Königin von Kastilien und seit 1516 Herrscherin der Länder der Krone von Aragon, stirbt.
-1825 – Ferdinand Lassalle, als Gründer des Allgemeinen Deutschen Arbeiter­vereins einer der Väter der deutschen Sozial­demokratie, kommt zur Welt.
-1945 – Amerikanische Truppen befreien das KZ Buchenwald, in dem bereits Häftlinge nach einem Aufstand die Lager­leitung entmachtet haben.
-1970 – Im Kennedy Space Center startet die Mission Apollo 13 mit dem Ziel der dritten bemannten Mond­landung. Nach einer Explosion im Servi
-      <section id="pet-adoption-section">
-            <h3>What kind of pet are you looking for?</h3>
-            <div>
-              <div>
-                <Link to="/pet-adoption/cat">
-                  <p>Cats</p>
-                </Link>
-              </div>
-              <div>
-                <Link to="/pet-adoption/dog">
-                  <p>Dogs</p>
-                </Link>
-              </div>
+    <div className="homepage">
+      {/* banner section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Find your new best friend</h1>
+          <p>Our loving pets are waiting for a new home</p>
+          <Link to="/pet-adoption" className="btn btn-primary">View pets</Link>
+        </div>
+      </section>
+      
+      {/* about */}
+      <section className="about-preview">
+        <div className="container">
+          <h2>Welcome to the pet shelter</h2>
+          <div className="about-content">
+            <div className="about-text">
+              <p>
+              We are a committed team dedicated to the rescue, care and rehoming of pets in need. 
+              For over 10 years we have been providing abandoned and abused pets have found a temporary home with us.
+              </p>
+              <Link to="/about" className="btn btn-secondary">More about us</Link>
             </div>
-          </section>
+            <div className="about-image">
+              <img src="/images/shelter-team.jpg" alt="Our team" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* newest pets */}
+      <section className="recent-pets">
+        <div className="container">
+          <h2>Newest Residents</h2>
+          <div className="pets-grid">
+            {recentPets.length > 0 ? (
+              recentPets.map((pet) => (
+                <div key={pet._id} className="pet-card">
+                  <div className="pet-image-container">
+                    <img src={pet.image} alt={pet.name} className="pet-image" />
+                  </div>
+                  <div className="pet-info">
+                    <h3>{pet.name}</h3>
+                    <p>{pet.breed}, {pet.age}</p>
+                    <Link to={`/pet-details/${pet._id}`} className="btn btn-sm">Details</Link>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p className="no-pets-message">Currently no pets available</p>
+            )}
+          </div>
+          <div className="more-pets">
+            <Link to="/pet-adoption" className="btn btn-outline">View all pets</Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* types of pet */}
+      <section className="pet-types">
+        <div className="container">
+          <h2>What kind of pet are you looking for?</h2>
+          <div className="type-cards">
+            <div className="type-card">
+              <Link to="/pet-adoption/cat" className="type-link">
+                <div className="type-image cat-image"></div>
+                <h3>Cats</h3>
+                <p>Our cuddly velvet paws</p>
+              </Link>
+            </div>
+            <div className="type-card">
+              <Link to="/pet-adoption/dog" className="type-link">
+                <div className="type-image dog-image"></div>
+                <h3>Dogs</h3>
+                <p>Faithful companions for every day</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* support section */}
+      <section className="support-cta">
+        <div className="container">
+          <h2>Help us to help</h2>
+          <p>We rely on your support to provide our animals with the best possible care.</p>
+          <Link to="/support" className="btn btn-accent">Support now</Link>
+        </div>
+      </section>
     </div>
   )
 }
-
-// export default HomepagePage

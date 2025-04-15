@@ -43,106 +43,122 @@ export const EditPet = ({ setShowEditForm, onUpdateSuccess}) => {
 
 
   return (
-    <div>
-        <form onSubmit={async (event) => {
+    <div className="form-overlay">
+        <form className="pet-form" onSubmit={async (event) => {
             handleUpdatePet(event, petId, {name, type, breed, age, image, gender, size, description})
             setShowEditForm(false);
-}}>
-
-    
-            <h3>Edit Pet</h3>
-            <h6 className="closeButton" onClick={() => setShowEditForm(false)}>x</h6>
+        }}>
+            <div className="form-header">
+                <h3>Edit Pet</h3>
+                <h6 className="closeButton" onClick={() => setShowEditForm(false)}>x</h6>
+            </div>
             
-            <label>
-                Pet Name:
-                <input
-                    type="text"
-                    placeholder="Pet Name"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                />
-            </label>
+            <div className="form-group">
+                <label>
+                    Pet Name:
+                    <input
+                        type="text"
+                        placeholder="Pet Name"
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                    />
+                </label>
+            </div>
             
-            <label>
-                Pet Type:
-                <select
-                    name="type"
-                    value={type}
-                    onChange={(event) => setType(event.target.value)}
-                    required
-                >
-                    <option value="">Select type</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                </select>
-            </label>
+            <div className="form-group">
+                <label>
+                    Pet Type:
+                    <select
+                        name="type"
+                        value={type}
+                        onChange={(event) => setType(event.target.value)}
+                        required
+                    >
+                        <option value="">Select type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                    </select>
+                </label>
+            </div>
             
-            <label>
-                Breed:
-                <input
-                    type="text"
-                    placeholder="Breed"
-                    value={breed}
-                    onChange={(event) => setBreed(event.target.value)}
-                />
-            </label>
+            <div className="form-group">
+                <label>
+                    Breed:
+                    <input
+                        type="text"
+                        placeholder="Breed"
+                        value={breed}
+                        onChange={(event) => setBreed(event.target.value)}
+                    />
+                </label>
+            </div>
             
-            <label>
-                Age:
-                <input
-                    type="text"
-                    placeholder="Age (e.g., '2 years')"
-                    value={age}
-                    onChange={(event) => setAge(event.target.value)}
-                />
-            </label>
+            <div className="form-group">
+                <label>
+                    Age:
+                    <input
+                        type="text"
+                        placeholder="Age (e.g., '2 years')"
+                        value={age}
+                        onChange={(event) => setAge(event.target.value)}
+                    />
+                </label>
+            </div>
             
-            <label>
-                Gender:
-                <select
-                    name="gender"
-                    value={gender}
-                    onChange={(event) => setGender(event.target.value)}
-                >
-                    <option value="">Select gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </label>
+            <div className="form-group">
+                <label>
+                    Gender:
+                    <select
+                        name="gender"
+                        value={gender}
+                        onChange={(event) => setGender(event.target.value)}
+                    >
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label>
+            </div>
             
             {/* Only show size field for dogs */}
             {type !== "cat" && (
-                <label>
-                    Size:
-                    <select
-                        name="size"
-                        value={size}
-                        onChange={(event) => setSize(event.target.value)}
-                    >
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="big">Big</option>
-                    </select>
-                </label>
+                <div className="form-group">
+                    <label>
+                        Size:
+                        <select
+                            name="size"
+                            value={size}
+                            onChange={(event) => setSize(event.target.value)}
+                        >
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="big">Big</option>
+                        </select>
+                    </label>
+                </div>
             )}
             
-            <label>
-                Description:
-                <textarea
-                    placeholder="Description"
-                    value={description}
-                    onChange={(event) => setDescription(event.target.value)}
-                />
-            </label>
+            <div className="form-group">
+                <label>
+                    Description:
+                    <textarea
+                        placeholder="Description"
+                        value={description}
+                        onChange={(event) => setDescription(event.target.value)}
+                    />
+                </label>
+            </div>
             
-            <label>
-                Image:
-                <input
-                    type="file"
-                    name="image"
-                    onChange={handleImageChange}
-                />
-            </label>
+            <div className="form-group">
+                <label>
+                    Image:
+                    <input
+                        type="file"
+                        name="image"
+                        onChange={handleImageChange}
+                    />
+                </label>
+            </div>
 
             <button className="submitButton" type="submit">
                Update Pet

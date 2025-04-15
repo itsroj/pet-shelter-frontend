@@ -1,0 +1,194 @@
+/* Navbar Styles - Pet Shelter Design with green color palette */
+
+.navbar-wrapper {
+  background-color: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--secondary);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo area */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Navigation links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-links a:hover {
+  color: var(--primary);
+  background-color: rgba(142, 182, 155, 0.15);
+}
+
+.navbar-links a.active-link {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.navbar-links a.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 15px;
+  right: 15px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+/* Authentication area */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+.login-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-button:hover {
+  background-color: #3d6943;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-greeting {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.admin-link {
+  background-color: #8eb69b;
+  color: var(--dark);
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.admin-link:hover {
+  background-color: #7da588;
+}
+
+.logout-button {
+  background-color: transparent;
+  color: var(--dark);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.logout-button:hover {
+  color: white;
+  background-color: var(--primary);
+}
+
+/* Modal Styling */
+.modal-title {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Basic responsive adjustments without mobile menu */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .navbar-logo {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-logo a {
+    justify-content: center;
+  }
+  
+  .navbar-links {
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-links a {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
+  
+  .navbar-auth {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

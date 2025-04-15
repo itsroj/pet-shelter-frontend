@@ -34,7 +34,7 @@ export const InformationPage = () => {
                 ))}
               </div>
             )}
-            {isUser && (<AddArticle setShowForm={setShowForm} />)}
+            {/* {isUser && (<AddArticle setShowForm={setShowForm} />)} */}
     </div>
   )
 }

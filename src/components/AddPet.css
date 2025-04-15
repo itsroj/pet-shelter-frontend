@@ -1,0 +1,234 @@
+/* Styling for AddPet Component with fixed button and modal form */
+
+.admin-add-section {
+  /* This container doesn't need special styling as button is fixed */
+  position: relative;
+}
+
+/* Fixed Corner Button */
+.add-pet-toggle-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 55px;
+  height: 55px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.add-pet-toggle-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background-color: #3d6943;
+}
+
+.add-pet-toggle-btn .plus-icon {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Form Container as Modal */
+.add-pet-form-wrapper {
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Header */
+.form-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+}
+
+/* Form Layout */
+.add-pet-form {
+  padding: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Form Elements */
+.add-pet-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.add-pet-form input,
+.add-pet-form select,
+.add-pet-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-family: inherit;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.add-pet-form input:focus,
+.add-pet-form select:focus,
+.add-pet-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(75, 127, 82, 0.1);
+}
+
+.add-pet-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* File Input */
+.file-input {
+  padding: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.cancel-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  color: #555;
+}
+
+.cancel-btn:hover {
+  background-color: #e9ecef;
+}
+
+.submit-btn {
+  background-color: var(--accent);
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #4a9c4a;
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .add-pet-toggle-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}

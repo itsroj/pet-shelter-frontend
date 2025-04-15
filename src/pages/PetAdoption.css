@@ -1,0 +1,195 @@
+/* Pet Adoption Page Styles */
+
+.pet-adoption-page {
+  color: var(--dark);
+}
+
+/* Hero section */
+.adoption-hero {
+  background-color: var(--light);
+  padding: 60px 0;
+  text-align: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/images/pets-pattern.jpg');
+  background-size: 300px;
+}
+
+.adoption-hero h1 {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.adoption-hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+/* Pet Categories Section */
+.pet-categories {
+  padding: 60px 0;
+}
+
+.pet-categories h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+.category-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.category-card {
+  flex: 0 1 400px;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(45, 61, 45, 0.15);
+}
+
+.category-link {
+  display: block;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.category-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.05);
+}
+
+.cat-image {
+  background-image: url('/images/cats-category.jpg');
+}
+
+.dog-image {
+  background-image: url('/images/dogs-category.jpg');
+}
+
+.category-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.category-info h3 {
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+  color: var(--primary);
+}
+
+.category-info p {
+  margin: 0 0 20px 0;
+  color: #555;
+}
+
+.view-pets {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent);
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent);
+  transition: all 0.2s ease;
+}
+
+.category-link:hover .view-pets {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Adoption Process Section */
+.adoption-process {
+  padding: 70px 0;
+  background-color: #e8f0e8;
+}
+
+.adoption-process h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 50px;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.process-step {
+  flex: 1;
+  text-align: center;
+  padding: 30px 20px;
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.process-step h4 {
+  margin: 15px 0 10px;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.process-step p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-steps {
+    flex-direction: column;
+  }
+  
+  .process-step {
+    margin-top: 30px;
+  }
+  
+  .adoption-hero h1 {
+    font-size: 2.2rem;
+  }
+}
