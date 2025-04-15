@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { PetContext } from '../contexts/PetContext';
 import { useParams } from "react-router-dom";
+import './EditPetArticle.css'
 
 export const EditPet = ({ setShowEditForm, onUpdateSuccess}) => {
 

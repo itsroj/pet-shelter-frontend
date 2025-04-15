@@ -59,14 +59,16 @@ export const AboutPage = () => {
             </div>
             
             <div className="about-text">
+              <h3>Our Story</h3>
+              <p>Hello and welcome!
+We're Rojda and Sosha — two aspiring web developers on the final stretch of our full-time Web Development Bootcamp journey.
+For our capstone project, we wanted to create something that truly matters — not just to us, but to the world around us. That’s how "Once Upon a Paw" Shelter came to life.
+We believe that every animal deserves a loving home, and that shelters can be more than just temporary places — they can be warm, inviting spaces filled with hope. Sadly, we noticed that many animal shelter websites in Germany lack modern, thoughtful design. So we set out to change that.
+This project is our tribute to the animals who wait patiently for a second chance — and to the people who open their hearts and homes to them. Through intuitive functionality and a soft, welcoming design, our goal was to build a platform where adoption feels personal, emotional, and easy.
+Whether you're here to adopt, volunteer, or simply browse the faces of those looking for love — we're so happy to have you here. Thank you for being part of this mission.</p>
+          
               <h3>Our Mission</h3>
               <p>To rescue, rehabilitate, and rehome animals in need while educating the community on responsible pet ownership and animal welfare.</p>
-              
-              <h3>Our Story</h3>
-              <p>Founded in 2013 by a group of passionate animal lovers, our shelter began as a small rescue operation and has grown into a comprehensive animal welfare organization serving hundreds of pets each year.</p>
-              
-              <h3>Our Team</h3>
-              <p>Our dedicated staff includes experienced animal care specialists, veterinarians, trainers, and administrative professionals, all supported by a network of volunteers who donate their time and skills to help our animals thrive.</p>
               
               <h3>Our Values</h3>
               <ul className="values-list">

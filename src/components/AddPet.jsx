@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { PetContext } from '../contexts/PetContext';
 import { AuthContext } from "../contexts/AuthContext";
-import './AddPet.css';
+import './AddPetArticle.css';
 
 export const AddPet = ({setShowForm})=> {
     const {handleCreatePet} = useContext(PetContext);

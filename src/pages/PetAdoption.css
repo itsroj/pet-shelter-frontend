@@ -77,11 +77,11 @@
 }
 
 .cat-image {
-  background-image: url('/images/cats-category.jpg');
+  background-image: url('../images/cat-image.jpg');
 }
 
 .dog-image {
-  background-image: url('/images/dogs-category.jpg');
+  background-image: url('../images/dog-image.jpg');
 }
 
 .category-info {

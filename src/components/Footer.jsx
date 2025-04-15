@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="footer-container">
         <a href="mailto:info@petshelter.com" className="footer-item">
           <i className="fas fa-envelope contact-icon"></i>
-          info@petshelter.com
+          onceuponapaw@gmail.com
         </a>
         <a href="tel:+491234567890" className="footer-item">
           <i className="fas fa-phone contact-icon"></i>

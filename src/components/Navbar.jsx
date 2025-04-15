@@ -27,7 +27,7 @@ export const Navbar = () => {
         <div className="navbar-logo">
           <Link to="/">
             <FontAwesomeIcon icon={faPaw} className="logo-icon" />
-            <span className="logo-text">Pet Shelter</span>
+            <span className="logo-text">Once Upon a Paw</span>
           </Link>
         </div>
 

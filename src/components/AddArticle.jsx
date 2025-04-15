@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { ArticleContext } from '../contexts/ArticleContext';
 import { AuthContext } from "../contexts/AuthContext";
-import './AddPet.css';
+import './AddPetArticle.css';
 
 export const AddArticle = ({setShowForm})=> {
     const {handleCreateArticle} = useContext(ArticleContext);
@@ -12,13 +12,6 @@ export const AddArticle = ({setShowForm})=> {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [author, setAuthor] = useState("");
-
-    // set the createdBy field automatically
-    // useEffect(() => {
-    //     if (currentUser && currentUser._id) {
-    //         setCreatedBy(currentUser._id);
-    //     }
-    // }, [currentUser]);
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -58,10 +51,10 @@ export const AddArticle = ({setShowForm})=> {
     };
 
     return (
-        <div className="add-article-container">
+        <div className="admin-add-section">
             <button 
                 onClick={toggleForm} 
-                className="add-article-toggle-btn"
+                className="add-pet-toggle-btn"
                 aria-label="Add new article"
             >
                 <span className="plus-icon">+</span>
@@ -69,66 +62,60 @@ export const AddArticle = ({setShowForm})=> {
 
             {isFormVisible && (
                 <div className="modal-overlay" onClick={closeForm}>
-                    <div className="add-article-form-wrapper" onClick={e => e.stopPropagation()}>
-                        <form onSubmit={submitHandler} className="add-article-form">
-                            <div className="form-header">
-                                <h3>Add New Article</h3>
-                                <button 
-                                    type="button" 
-                                    className="close-button" 
-                                    onClick={closeForm}
-                                >
-                                    ×
-                                </button>
-                            </div>
-                            
+                    <div className="add-pet-form-wrapper" onClick={e => e.stopPropagation()}>
+                        <div className="form-header">
+                            <h3>Add New Article</h3>
+                            <button 
+                                type="button" 
+                                className="close-button" 
+                                onClick={closeForm}
+                            >
+                                ×
+                            </button>
+                        </div>
+                        
+                        <form onSubmit={submitHandler} className="add-pet-form">
                             <div className="form-grid">
-                                <div className="form-group">
-                                    <label>
-                                        Title:
-                                        <input
-                                            type="text"
-                                            placeholder="Title"
-                                            value={title}
-                                            onChange={(event) => setTitle(event.target.value)}
-                                            required
-                                        />
-                                    </label>
-                                </div>
-                   
                                 <div className="form-group full-width">
-                                    <label>
-                                        Description:
-                                        <textarea
-                                            placeholder="Description"
-                                            value={description}
-                                            onChange={(event) => setDescription(event.target.value)}
-                                            required
-                                        />
-                                    </label>
+                                    <label>Title:</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Title"
+                                        value={title}
+                                        onChange={(event) => setTitle(event.target.value)}
+                                        required
+                                    />
                                 </div>
                                 
-                                {/* Hidden input for createdBy - user won't see this */}
+                                <div className="form-group full-width">
+                                    <label>Description:</label>
+                                    <textarea
+                                        placeholder="Description"
+                                        value={description}
+                                        onChange={(event) => setDescription(event.target.value)}
+                                        required
+                                    />
+                                </div>
+                                
+                                {/* Hidden input for author - user won't see this */}
                                 <input
                                     type="hidden"
                                     name="author"
                                     value={author}
                                 />
-
+                                
                                 <div className="form-group full-width">
-                                    <label>
-                                        Image:
-                                        <input
-                                            type="file"
-                                            name="image"
-                                            className="file-input"
-                                            required
-                                        />
-                                    </label>
+                                    <label>Image:</label>
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        className="file-input"
+                                        required
+                                    />
                                 </div>
                                 
-                                <div className="form-actions full-width">
-                                    <button type="button" onClick={closeForm} className="cancel-btn">
+                                <div className="form-actions">
+                                    <button type="button" className="cancel-btn" onClick={closeForm}>
                                         Cancel
                                     </button>
                                     <button type="submit" className="submit-btn">

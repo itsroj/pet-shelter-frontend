@@ -232,3 +232,205 @@
     height: 50px;
   }
 }
+
+/* Shared styles for AddPet and AddArticle components */
+
+.add-item-container {
+  position: relative;
+}
+
+/* Add button styling */
+.add-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary, #4b7f52);
+  color: white;
+  border: none;
+  border-radius: var(--radius, 4px);
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.add-button:hover {
+  background-color: var(--primary-dark, #3d6b44);
+}
+
+.add-button:active {
+  transform: translateY(1px);
+}
+
+.plus-icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Form overlay (modal background) */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Form container */
+.item-form-container {
+  width: 100%;
+  max-width: 500px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Actual form */
+.item-form {
+  background-color: white;
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow, 0 4px 12px rgba(0, 0, 0, 0.15));
+  overflow: hidden;
+}
+
+/* Form header */
+.form-header {
+  background-color: var(--primary, #4b7f52);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.closeButton {
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Form groups */
+.form-group {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius-sm, 4px);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group input[type="file"] {
+  padding: 8px 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary, #4b7f52);
+  box-shadow: 0 0 0 2px rgba(75, 127, 82, 0.2);
+}
+
+/* Submit button */
+.submitButton {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 20px auto;
+  padding: 12px;
+  background-color: var(--primary, #4b7f52);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: var(--primary-dark, #3d6b44);
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-overlay {
+    padding: 10px;
+  }
+  
+  .item-form-container {
+    max-width: 100%;
+  }
+  
+  .form-group {
+    padding: 10px 15px;
+  }
+  
+  .submitButton {
+    width: calc(100% - 30px);
+    margin: 15px auto;
+  }
+}

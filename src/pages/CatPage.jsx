@@ -12,13 +12,13 @@ export const CatPage = () => {
   const setShowForm = () => {
     // console.log("just a test prop!")
   }
+
+  if (!pets) {
+    return <div className="loading-container"><p>Loading cats...</p></div>
+}
+
   return (
     <div className="pet-listing-page">
-      {isAdmin && (
-        <div className="admin-add-section">
-          <AddPet setShowForm={setShowForm} />
-        </div>
-      )}
       <div className="pet-header">
         <h2 className="pet-title">Cat Adoption</h2>
         <p>Find your perfect feline companion. Our cats are loving, playful, and ready for their forever homes.</p>
@@ -46,7 +46,11 @@ export const CatPage = () => {
           ))}
         </div>
       )}
-      
+      {isAdmin && (
+        <div className="admin-add-section">
+          <AddPet setShowForm={setShowForm} />
+        </div>
+      )}
     </div>
   )
 }
