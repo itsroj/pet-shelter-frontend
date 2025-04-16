@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import "./AboutPage.css";
 // import { aboutUsImg } from '../images/cat-image.jpg'
+import ShelterPlay from "../images/shelter-play.png"
+import ShelterGarden from "../images/shelter-garden.png"
+import ShelterCat from "../images/shelter-cat-room.png"
+import ShelterClinic from "../images/shelter-clinic.png"
 
 export const AboutPage = () => {
   return (
@@ -10,7 +14,7 @@ export const AboutPage = () => {
       <div className="about-hero">
         <div className="container">
           <h1>About Our Shelter</h1>
-          <p>Providing care, love, and forever homes since 2013</p>
+          <p>Providing care, love, and forever homes since 2000</p>
         </div>
       </div>
       
@@ -34,16 +38,16 @@ export const AboutPage = () => {
             
             <div className="about-gallery">
               <div className="gallery-image">
-                <img src="/images/shelter-exterior.jpg" alt="Shelter exterior" />
+                <img src={ ShelterPlay } alt="Shelter exterior" />
               </div>
               <div className="gallery-image">
-                <img src="/images/dog-play-area.jpg" alt="Dog play area" />
+                <img src={ ShelterGarden } alt="Dog play area" />
               </div>
               <div className="gallery-image">
-                <img src="/images/cat-room.jpg" alt="Cat room" />
+                <img src={ ShelterCat } alt="Cat room" />
               </div>
               <div className="gallery-image">
-                <img src="/images/vet-clinic.jpg" alt="Veterinary clinic" />
+                <img src={ ShelterClinic } alt="Veterinary clinic" />
               </div>
             </div>
           </div>

@@ -18,8 +18,10 @@ import { PetDetailsPage } from "./pages/PetDetailsPage";
 function App() {
 
   return (
-    <>
+    <div className="wrapper">
+    
       <Navbar />
+      <main className="main-content">
       <Routes>
         <Route path="/" element={<HomepagePage />} />
         <Route path="/pet-adoption" element={<PetAdoptionPage />} />
@@ -31,8 +33,9 @@ function App() {
         <Route path="/information" element={<InformationPage />} />
         <Route path="/pet-details/:petId" element={<PetDetailsPage />} />
       </Routes>
+      </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

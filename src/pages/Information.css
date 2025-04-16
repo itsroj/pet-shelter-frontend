@@ -48,13 +48,14 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 30px;
-  border-left: 5px solid var(--primary, #4b7f52);
+  border-left: 5px solid var(--primary, #4b7f52); 
 }
 
 /* Article image - made smaller and optional */
 .article-image-wrapper {
-  max-height: 300px;
-  overflow: hidden;
+  width: 100%;
+  max-height: none; 
+  overflow: visible; 
 }
 
 .article-image {
@@ -135,7 +136,7 @@
   min-height: 300px;
 }
 
-.spinner {
+/*.spinner {
   width: 40px;
   height: 40px;
   margin-bottom: 15px;
@@ -143,7 +144,7 @@
   border-top: 4px solid var(--primary, #4b7f52);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-}
+} */
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
