@@ -5,13 +5,7 @@ import "./Homepage.css"
 
 export const HomepagePage = () => {
   const { pets, getAllPets } = useContext(PetContext);
-  
-  // load all the pets
-  useEffect(() => {
-    if (getAllPets) {
-      getAllPets();
-    }
-  }, [getAllPets]);
+
   
   // newest animal in shelter (last 4)
   const recentPets = pets?.slice(-4) || [];
