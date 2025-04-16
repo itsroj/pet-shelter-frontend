@@ -14,13 +14,16 @@ const ArticleContextWrapper = ({ children }) => {
 
   // Check if current user has user role
   const isUser = () => {
-    return currentUser && (currentUser.role === "admin" || currentUser.role === "user");
+    return (
+      currentUser &&
+      (currentUser.role === "admin" || currentUser.role === "user")
+    );
   };
 
   const isAdmin = () => {
     return currentUser && currentUser.role === "admin";
   };
-  
+
   useEffect(() => {
     getAllArticles();
   }, []);
@@ -56,27 +59,27 @@ const ArticleContextWrapper = ({ children }) => {
 
   async function handleCreateArticle(event, articleData) {
     event.preventDefault();
-    
+
     // Check for user permission
     if (!isUser()) {
-    //   setError("User permission required to create articles");
+      //   setError("User permission required to create articles");
       return;
     }
-    
+
     // Create form data for image upload
     const myFormData = new FormData();
-    
-    // Add article properties to form data matching the schema        
-    myFormData.append("title", articleData.title);        
-    myFormData.append("description", articleData.description);          
+
+    // Add article properties to form data matching the schema
+    myFormData.append("title", articleData.title);
+    myFormData.append("description", articleData.description);
     myFormData.append("author", currentUser._id); // Use the user ID instead of the whole object
-    
+
     // Add image if provided (required field)
     if (event.target.image.files[0]) {
       const image = event.target.image.files[0];
       myFormData.append("image", image);
     } else {
-    //   setError("Image is required");
+      //   setError("Image is required");
       return;
     }
 
@@ -87,15 +90,15 @@ const ArticleContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            "Content-Type": "multipart/form-data"  // Add this line
-          }
+            "Content-Type": "multipart/form-data", // Add this line
+          },
         }
       );
       console.log("article created", data);
       setArticles([data, ...articles]);
       nav("/information");
     } catch (error) {
-            console.log(error);
+      console.log(error);
       //   setError("Failed to create article");
     }
   }
@@ -109,14 +112,14 @@ const ArticleContextWrapper = ({ children }) => {
     // }
 
     const myFormData = new FormData();
-    
+
     // Add article properties to form data
-    Object.keys(updatedData).forEach(key => {
-      if (key !== 'image') {
+    Object.keys(updatedData).forEach((key) => {
+      if (key !== "image") {
         myFormData.append(key, updatedData[key]);
       }
     });
-    
+
     // Add image if provided
     if (updatedData.image) {
       myFormData.append("image", updatedData.image);
@@ -129,13 +132,13 @@ const ArticleContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            "Content-Type": "multipart/form-data"
-          }
+            "Content-Type": "multipart/form-data",
+          },
         }
       )
       .then((res) => {
         console.log("article updated", res);
-        const updatedArticles = articles.map(article => 
+        const updatedArticles = articles.map((article) =>
           article._id === articleId ? res.data : article
         );
         setArticles(updatedArticles);
@@ -150,7 +153,7 @@ const ArticleContextWrapper = ({ children }) => {
   function handleDeleteArticle(articleId) {
     // Check for admin permission
     if (!isUser()) {
-    //   setError("Admin permission required to delete articles");
+      //   setError("Admin permission required to delete articles");
       return;
     }
 
@@ -160,12 +163,14 @@ const ArticleContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          }
+          },
         }
       )
       .then((res) => {
         console.log("article removed from DB", res);
-        const filteredArticles = articles.filter(article => article._id !== articleId);
+        const filteredArticles = articles.filter(
+          (article) => article._id !== articleId
+        );
         setArticles(filteredArticles);
         // setError(null);
       })
@@ -189,7 +194,7 @@ const ArticleContextWrapper = ({ children }) => {
         getOneArticle,
         isUser: isUser(),
         isAdmin: isAdmin(),
-        currentUser 
+        currentUser,
       }}
     >
       {children}

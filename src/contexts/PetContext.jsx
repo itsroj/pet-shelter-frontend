@@ -16,7 +16,7 @@ const PetContextWrapper = ({ children }) => {
   const isAdmin = () => {
     return currentUser && currentUser.role === "admin";
   };
-  
+
   // console.log("this is curr user", currentUser)
   useEffect(() => {
     getAllPets();
@@ -53,45 +53,44 @@ const PetContextWrapper = ({ children }) => {
 
   async function handleCreatePet(event, petData) {
     event.preventDefault();
-    
 
     // console.log("pet create function triggered!")
     // Check for admin permission
     if (!isAdmin()) {
-    //   setError("Admin permission required to create pets");
+      //   setError("Admin permission required to create pets");
       return;
     }
-    
+
     // Create form data for image upload
     const myFormData = new FormData();
 
     // console.log("pet data inside context:", petData)
-    
+
     // Add pet properties to form data matching the schema
-    myFormData.append("type", petData.type);          // "cat" or "dog"
-    myFormData.append("breed", petData.breed);        // required
-    myFormData.append("name", petData.name);          // required
-    myFormData.append("age", petData.age);            // required
-    myFormData.append("gender", petData.gender);      // "male" or "female"
+    myFormData.append("type", petData.type); // "cat" or "dog"
+    myFormData.append("breed", petData.breed); // required
+    myFormData.append("name", petData.name); // required
+    myFormData.append("age", petData.age); // required
+    myFormData.append("gender", petData.gender); // "male" or "female"
     myFormData.append("createdBy", currentUser._id);
 
     if (petData.size) {
-      myFormData.append("size", petData.size);        // "small", "medium", or "big" (optional)
+      myFormData.append("size", petData.size); // "small", "medium", or "big" (optional)
     }
-    
+
     myFormData.append("description", petData.description); // required
-    
-    console.log("my form data before image upload:",myFormData)
+
+    console.log("my form data before image upload:", myFormData);
     // Add image if provided (required field)
     if (event.target.image.files[0]) {
       const image = event.target.image.files[0];
       myFormData.append("image", image);
     } else {
-    //   setError("Image is required");
+      //   setError("Image is required");
       return;
     }
 
-    console.log("my form data after image upload:", myFormData)
+    console.log("my form data after image upload:", myFormData);
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/pet/create`,
@@ -99,16 +98,16 @@ const PetContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          }
+          },
         }
       );
       console.log("pet created", data);
       setPets([data, ...pets]);
-    //   setError(null);
+      //   setError(null);
       // nav("/pet-adoption");
     } catch (error) {
       console.log(error);
-    //   setError("Failed to create pet");
+      //   setError("Failed to create pet");
     }
   }
 
@@ -118,22 +117,22 @@ const PetContextWrapper = ({ children }) => {
     // if (!isAdmin()) {
     //         return;
     // }
-  
-        const myFormData = new FormData();
-    
+
+    const myFormData = new FormData();
+
     // Add pet properties to form data
-    Object.keys(updatedData).forEach(key => {
-      if (key !== 'image') {
+    Object.keys(updatedData).forEach((key) => {
+      if (key !== "image") {
         myFormData.append(key, updatedData[key]);
-              }
+      }
     });
-    
-    // Add image if provided 
+
+    // Add image if provided
     if (updatedData.image) {
       myFormData.append("image", updatedData.image);
       // console.log("Adding image file:", updatedData.image.name);
     }
-  
+
     try {
       const response = await axios.patch(
         `${import.meta.env.VITE_API_URL}/pet/update-pet/${petId}`,
@@ -141,19 +140,19 @@ const PetContextWrapper = ({ children }) => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            "Content-Type": "multipart/form-data" // Important for file uploads
-          }
+            "Content-Type": "multipart/form-data", // Important for file uploads
+          },
         }
       );
-      
+
       // console.log("Pet updated successfully:", response.data);
-      
+
       // Update the local state
-      const updatedPets = pets.map(pet => 
+      const updatedPets = pets.map((pet) =>
         pet._id === petId ? response.data : pet
       );
       setPets(updatedPets);
-      
+
       return response.data; // Return the updated pet data
     } catch (error) {
       console.log(err);
@@ -163,22 +162,19 @@ const PetContextWrapper = ({ children }) => {
   function handleDeletePet(petId) {
     // Check for admin permission
     if (!isAdmin()) {
-    //   setError("Admin permission required to delete pets");
+      //   setError("Admin permission required to delete pets");
       return;
     }
 
     axios
-      .delete(
-        `${import.meta.env.VITE_API_URL}/pet/delete-pet/${petId}`,
-        {
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          }
-        }
-      )
+      .delete(`${import.meta.env.VITE_API_URL}/pet/delete-pet/${petId}`, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      })
       .then((res) => {
         console.log("pet removed from DB", res);
-        const filteredPets = pets.filter(pet => pet._id !== petId);
+        const filteredPets = pets.filter((pet) => pet._id !== petId);
         setPets(filteredPets);
         nav("/pet-adoption");
         // setError(null);
@@ -199,9 +195,9 @@ const PetContextWrapper = ({ children }) => {
         handleUpdatePet,
         handleDeletePet,
         getAllPets,
-        getOnePet, 
+        getOnePet,
         error,
-        isAdmin: isAdmin()
+        isAdmin: isAdmin(),
       }}
     >
       {children}
