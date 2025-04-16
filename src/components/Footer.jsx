@@ -5,9 +5,9 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <a href="mailto:info@petshelter.com" className="footer-item">
+        <a href="mailto:once-upon-a-paw@pet-shelter.com" className="footer-item">
           <i className="fas fa-envelope contact-icon"></i>
-          onceuponapaw@gmail.com
+          once-upon-a-paw@pet-shelter.com
         </a>
         <a href="tel:+491234567890" className="footer-item">
           <i className="fas fa-phone contact-icon"></i>

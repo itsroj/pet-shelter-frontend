@@ -161,12 +161,16 @@
   background-color: #c9302c;
 }
 
-/* Back link */
+/* Back link and adopt button container */
 .back-link {
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.back-link a {
+/* Standard back link */
+.back-link a:not(.adopt-button) {
   display: inline-flex;
   align-items: center;
   color: var(--primary);
@@ -175,9 +179,35 @@
   transition: all 0.3s ease;
 }
 
-.back-link a:hover {
+.back-link a:not(.adopt-button):hover {
   color: #3d6943;
   text-decoration: underline;
+}
+
+/* Adopt button - improved styling */
+.adopt-button {
+  background-color: var(--accent, #e27d60);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.adopt-button:hover {
+  background-color: #d06c52;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.adopt-button:active {
+  transform: translateY(0);
 }
 
 /* Edit form */

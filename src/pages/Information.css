@@ -164,6 +164,30 @@
   font-size: 1.1rem;
 }
 
+/* Contact button styling */
+.contact-button {
+  display: inline-block;
+  background-color: var(--primary, #4b7f52);
+  color: white;
+  padding: 8px 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: var(--radius, 4px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+  background-color: #3d6943;
+  transform: translateY(-2px);
+}
+
+.contact-button:active {
+  transform: translateY(0);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .articles-container {

@@ -96,6 +96,13 @@ export const PetDetailsPage = () => {
                             <Link to={`/pet-adoption/${pet.type}`}>
                                 Back to {pet.type === "cat" ? "Cats" : "Dogs"}
                             </Link>
+                            
+                            <a 
+                                href={`mailto:once-upon-a-paw@pet-shelter.com?subject=Adoption Request for ${pet.name} (ID: ${pet._id})&body=Hello,%0A%0AI'm interested in adopting ${pet.name}, the ${pet.breed} ${pet.type}.%0A%0APlease contact me with more information about the adoption process.%0A%0AThank you!`} 
+                                className="adopt-button"
+                            >
+                                Send Request
+                            </a>
                         </div>
                     </div>
                 </div>

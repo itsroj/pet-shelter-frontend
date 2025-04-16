@@ -44,6 +44,13 @@ export const InformationPage = () => {
                 <p className="article-description">{article.description}</p>
                 <p className="article-author">By: {article.author?.username || "Unknown"}</p>
                 
+                <a 
+                  href={`mailto:once-upon-a-paw@pet-shelter.com?subject=Regarding: ${article.title}&body=Hello,%0A%0AI'm contacting you regarding the post "${article.title}".%0A%0APlease provide more information about this announcement.%0A%0AThank you!`} 
+                  className="contact-button"
+                >
+                  Contact About This
+                </a>
+                
                 {isUser && (
                   <div className="admin-controls">
                     <button
