@@ -37,39 +37,14 @@ export const SupportUsPage = () => {
             
             <div className="donation-form">
               <h3>Make a Donation</h3>
-              <div className="amount-options">
-                <button 
-                  className={donationAmount === 10 ? "amount-btn active" : "amount-btn"} 
-                  onClick={() => handleAmountChange(10)}
-                >€10</button>
-                <button 
-                  className={donationAmount === 25 ? "amount-btn active" : "amount-btn"} 
-                  onClick={() => handleAmountChange(25)}
-                >€25</button>
-                <button 
-                  className={donationAmount === 50 ? "amount-btn active" : "amount-btn"} 
-                  onClick={() => handleAmountChange(50)}
-                >€50</button>
-                <button 
-                  className={donationAmount === 100 ? "amount-btn active" : "amount-btn"} 
-                  onClick={() => handleAmountChange(100)}
-                >€100</button>
-              </div>
               
-              <div className="custom-amount">
-                <label>Custom amount (€):</label>
-                <input 
-                  type="number" 
-                  min="1"
-                  value={customAmount} 
-                  onChange={handleCustomAmountChange} 
-                  placeholder="Enter amount"
-                />
-              </div>
-              
-              <button className="btn btn-primary donate-btn">
-                Donate {customAmount || donationAmount}€
-              </button>
+              <a 
+                href="https://www.paypal.com/pool/9e2ePT7gCZ?sr=ancr" 
+                target="_blank" 
+                className="btn btn-primary donate-btn"
+              >
+                Donate
+              </a>
             </div>
           </div>
         </section>
