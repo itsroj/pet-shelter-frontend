@@ -16,6 +16,10 @@ const ArticleContextWrapper = ({ children }) => {
   const isUser = () => {
     return currentUser && (currentUser.role === "admin" || currentUser.role === "user");
   };
+
+  const isAdmin = () => {
+    return currentUser && currentUser.role === "admin";
+  };
   
   useEffect(() => {
     getAllArticles();
@@ -183,7 +187,9 @@ const ArticleContextWrapper = ({ children }) => {
         getAllArticles,
         error,
         getOneArticle,
-        isUser: isUser()
+        isUser: isUser(),
+        isAdmin: isAdmin(),
+        currentUser 
       }}
     >
       {children}

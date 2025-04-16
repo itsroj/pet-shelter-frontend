@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { ArticleContext } from '../contexts/ArticleContext';
+import { AuthContext } from '../contexts/AuthContext'; // Import AuthContext
 import { AddArticle } from '../components/AddArticle';
 import { EditArticle } from '../components/EditArticle';
 import './Information.css';
 
 export const InformationPage = () => {
-  const { articles, isUser, handleDeleteArticle } = useContext(ArticleContext);
+  const { articles, isUser, isAdmin, handleDeleteArticle } = useContext(ArticleContext);
+  const { currentUser } = useContext(AuthContext); // Get the current user
   const [showEditForm, setShowEditForm] = useState(false);
   const [editId, setEditId] = useState(null);
 
@@ -13,6 +15,14 @@ export const InformationPage = () => {
     setEditId(articleId);
     setShowEditForm(true);
   }
+
+  // Function to check if user can modify this article
+  const canModifyArticle = (article) => {
+    if (isAdmin) return true;
+    return currentUser?._id && (
+      article.author?._id === currentUser._id || article.author === currentUser._id
+    );
+  };
 
   if (!articles) {
     return (
@@ -51,7 +61,7 @@ export const InformationPage = () => {
                   Contact About This
                 </a>
                 
-                {isUser && (
+                {canModifyArticle(article) && (
                   <div className="admin-controls">
                     <button
                       type="button"
@@ -73,7 +83,7 @@ export const InformationPage = () => {
       
       {isUser && <AddArticle setShowForm={() => {}} />}
       
-      {showEditForm && isUser && (
+      {showEditForm && (
         <EditArticle 
           articleId={editId}
           setShowEditForm={setShowEditForm}

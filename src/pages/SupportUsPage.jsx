@@ -87,19 +87,13 @@ export const SupportUsPage = () => {
               <div className="sponsorship-option">
                 <h3>Sponsor an Animal</h3>
                 <p>Choose a specific animal to sponsor. Your monthly contribution helps provide food, medical care, and enrichment for your sponsored pet until they find their forever home.</p>
-                <button className="btn btn-secondary">View Animals for Sponsorship</button>
-              </div>
-              
-              <div className="sponsorship-option">
                 <h3>Facility Sponsorship</h3>
                 <p>Sponsor a kennel, cat room, play yard, or medical treatment area. Your contribution helps maintain and improve these essential spaces.</p>
-                <button className="btn btn-secondary">Learn About Facility Sponsorship</button>
-              </div>
-              
-              <div className="sponsorship-option">
                 <h3>Corporate Sponsorship</h3>
                 <p>Partner with us as a business to make a significant impact while gaining visibility in the community. Custom sponsorship packages available.</p>
-                <button className="btn btn-secondary">Inquire About Corporate Options</button>
+                <Link to="/pet-adoption" className="btn btn-secondary">
+                  View Animals for Sponsorship
+                </Link>
               </div>
             </div>
           </div>
@@ -150,7 +144,11 @@ export const SupportUsPage = () => {
             <div className="volunteer-cta">
               <h3>Ready to join our team?</h3>
               <p>Fill out our volunteer application form to get started. Training sessions are held monthly.</p>
-              <button className="btn btn-accent">Apply to Volunteer</button>
+              <a href={`mailto:once-upon-a-paw@pet-shelter.com?subject=Regarding: Volunteering&body=Hello,%0A%0AI'm contacting you regarding the volunteering program.%0A%0AThank you!`}
+                className="btn btn-accent"
+              >
+              Apply to Volunteer
+              </a>
             </div>
           </div>
         </section>
