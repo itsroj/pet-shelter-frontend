@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { PetContext } from '../contexts/PetContext';
 import "./Homepage.css"
+import welcomeImg from "../images/homePageImg.png";
 
 export const HomepagePage = () => {
   const { pets, getAllPets } = useContext(PetContext);
@@ -24,17 +25,17 @@ export const HomepagePage = () => {
       {/* about */}
       <section className="about-preview">
         <div className="container">
-          <h2>Welcome to the pet shelter</h2>
+          <h2>Welcome to our warm and loving Pet Shelter</h2>
           <div className="about-content">
             <div className="about-text">
               <p>
               We are a committed team dedicated to the rescue, care and rehoming of pets in need. 
-              For over 10 years we have been providing abandoned and abused pets have found a temporary home with us.
+              We have been providing abandoned and abused pets have found a temporary home with us.
               </p>
-              <Link to="/about" className="btn btn-secondary">More about us</Link>
+              <Link to="/about" className="btn btn-primary">More about us</Link>
             </div>
             <div className="about-image">
-              <img src="/images/shelter-team.jpg" alt="Our team" />
+              <img src= { welcomeImg } alt="Our team" />
             </div>
           </div>
         </div>

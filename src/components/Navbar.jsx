@@ -8,6 +8,7 @@ import { Login } from "./Login";
 import { SignUp } from "./SignUp";
 import { AuthContext } from "../contexts/AuthContext";
 import "./Navbar.css";
+import Logo from "../images/logo.png"
 
 export const Navbar = () => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -27,7 +28,8 @@ export const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/">
-            <FontAwesomeIcon icon={faPaw} className="logo-icon" />
+            <img src= { Logo } alt="logo" className="logo-icon"/>
+            {/* <FontAwesomeIcon icon={faPaw} className="logo-icon" /> */}
             <span className="logo-text">Once Upon a Paw</span>
           </Link>
         </div>

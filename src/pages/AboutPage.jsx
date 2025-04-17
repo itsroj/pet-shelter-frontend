@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import "./AboutPage.css";
-// import { aboutUsImg } from '../images/cat-image.jpg'
+import aboutUsImg from '../images/team-about-us.png'
 import ShelterPlay from "../images/shelter-play.png"
 import ShelterGarden from "../images/shelter-garden.png"
 import ShelterCat from "../images/shelter-cat-room.png"
@@ -14,7 +14,7 @@ export const AboutPage = () => {
       <div className="about-hero">
         <div className="container">
           <h1>About Our Shelter</h1>
-          <p>Providing care, love, and forever homes since 2000</p>
+          <p>Providing care, love, and forever homes since 2025</p>
         </div>
       </div>
       
@@ -60,7 +60,7 @@ export const AboutPage = () => {
           <h2>About Us</h2>
           <div className="about-content reverse">
             <div className="team-image">
-              {/* <img src= {aboutUsImg} alt="Our team" /> */}
+              <img src= {aboutUsImg} alt="Our team" />
             </div>
             
             <div className="about-text">
@@ -144,7 +144,7 @@ you here. Thank you for being part of this mission.</p>
               
               <div className="contact-cta">
                 <Link to="/support" className="btn btn-primary">Support Us</Link>
-                <Link to="/pet-adoption" className="btn btn-secondary">Adopt a Pet</Link>
+                <Link to="/pet-adoption" className="btn btn-primary">Adopt a Pet</Link>
               </div>
             </div>
             

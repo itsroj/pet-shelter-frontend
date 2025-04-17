@@ -32,9 +32,12 @@ body {
   text-align: center;
 }
 
-/* Hero-Bereich */
+/* Hero Section with New Background */
 .hero {
-  background-image: linear-gradient(rgba(45, 61, 45, 0.6), rgba(45, 61, 45, 0.6)), url('/images/hero-pets.jpg');
+  background-image: linear-gradient(
+    rgba(75, 127, 82, 0.6),
+    rgba(45, 61, 45, 0.6)
+  ), url('../images/banner5.jpg');
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -43,21 +46,48 @@ body {
   justify-content: center;
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(45, 61, 45, 0.2) 100%
+  );
+  z-index: 1;
 }
 
 .hero-content {
   max-width: 700px;
   padding: 20px;
+  position: relative;
+  z-index: 2;
+  animation: fade-in 1s ease-out;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 30px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Buttons */
@@ -119,28 +149,35 @@ body {
   font-size: 0.9rem;
 }
 
-/* Über uns Bereich */
+/* about us section */
 .about-preview {
   padding: 60px 0;
-  background-color: var(--light);  /* Leicht grünlicher Hintergrund */
+  background-color: var(--light);
 }
 
 .about-content {
   display: flex;
+  flex-direction: row-reverse; /* Reverses the order: image left, text right */
   align-items: center;
+  justify-content: center; /* Centers the content horizontally */
   gap: 40px;
+  max-width: 1000px; /* Constrains the width for better centering */
+  margin: 0 auto; /* Centers the container itself */
 }
 
 .about-text {
-  flex: 1;
+  flex: 1.2; /* Maintains the text area size */
 }
 
 .about-image {
-  flex: 1;
+  flex: 0.8; /* Maintains the image area size */
 }
 
 .about-image img {
-  width: 100%;
+  width: 85%;
+  max-width: 350px; /* Slightly smaller maximum width */
+  display: block;
+  margin: 0 auto; /* Centers the image in its container */
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -173,7 +210,7 @@ body {
 }
 
 .pet-image-container {
-  height: 200px;
+  height: 280px;
   overflow: hidden;
 }
 
