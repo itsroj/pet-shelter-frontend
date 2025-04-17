@@ -13,12 +13,14 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { SupportUsPage } from "./pages/SupportUsPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { PetDetailsPage } from "./pages/PetDetailsPage";
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
     <div className="wrapper">
       <Navbar />
       <main className="main-content">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomepagePage />} />
           <Route path="/pet-adoption" element={<PetAdoptionPage />} />

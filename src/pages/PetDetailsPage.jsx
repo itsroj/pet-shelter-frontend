@@ -71,7 +71,6 @@ export const PetDetailsPage = () => {
                         
                         <div className="pet-meta-info">
                             <p>Posted by {pet.createdBy.username} on {pet.createdAt.slice(0,10)}</p>
-                            <p>Call us, if you are interested!</p>
                         </div>
                         
                         {isAdmin && (

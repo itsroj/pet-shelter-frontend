@@ -28,6 +28,8 @@ export const AddArticle = ({ setShowForm }) => {
       .then(() => {
         // Close the form on success
         closeForm();
+        setTitle("");
+        setDescription("");
       })
       .catch((err) => console.log(err));
   };

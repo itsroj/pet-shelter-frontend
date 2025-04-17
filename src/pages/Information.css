@@ -29,16 +29,16 @@
   line-height: 1.6;
 }
 
-/* Articles container - changed to single column for better readability */
+/* Articles container - smaller width */
 .articles-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  max-width: 900px;
+  gap: 20px; /* Reduced from 30px */
+  max-width: 700px; /* Reduced from 900px */
   margin: 0 auto;
 }
 
-/* Article card - redesigned for horizontal layout and full readability */
+/* Article card - more compact design */
 .article-card {
   background-color: white;
   border-radius: var(--radius, 8px);
@@ -54,16 +54,21 @@
 /* Article image - made smaller and optional */
 .article-image-wrapper {
   width: 100%;
-  max-height: none; 
-  overflow: visible; 
+  height: 300px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #f8f8f8; 
+  border-bottom: 1px solid #eee;
 }
 
 .article-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: 120%;
+  max-width: 120%;
+  object-fit: contain;
 }
-
 /* Article content - expanded to show full content */
 .article-content {
   padding: 25px;
