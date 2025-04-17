@@ -164,28 +164,28 @@
     padding: 10px;
     gap: 15px;
   }
-  
+
   .navbar-logo {
     flex-basis: 100%;
     text-align: center;
     margin-bottom: 10px;
   }
-  
+
   .navbar-logo a {
     justify-content: center;
   }
-  
+
   .navbar-links {
     gap: 5px;
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .navbar-links a {
     padding: 5px 8px;
     font-size: 0.9rem;
   }
-  
+
   .navbar-auth {
     flex-basis: 100%;
     justify-content: center;

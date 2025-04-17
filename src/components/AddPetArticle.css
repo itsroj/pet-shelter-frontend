@@ -53,8 +53,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Form Container as Modal */
@@ -215,16 +219,16 @@
   .form-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .form-actions {
     flex-direction: column;
   }
-  
+
   .cancel-btn,
   .submit-btn {
     width: 100%;
   }
-  
+
   .add-pet-toggle-btn {
     bottom: 20px;
     right: 20px;
@@ -420,15 +424,15 @@
   .form-overlay {
     padding: 10px;
   }
-  
+
   .item-form-container {
     max-width: 100%;
   }
-  
+
   .form-group {
     padding: 10px 15px;
   }
-  
+
   .submitButton {
     width: calc(100% - 30px);
     margin: 15px auto;

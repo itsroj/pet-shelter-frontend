@@ -152,16 +152,16 @@
   .form-overlay {
     padding: 10px;
   }
-  
+
   .pet-form,
   .article-form {
     max-width: 100%;
   }
-  
+
   .form-group {
     padding: 10px 15px;
   }
-  
+
   .submitButton {
     width: calc(100% - 30px);
     margin: 15px auto;
