@@ -12,7 +12,7 @@ import Logo from "../images/logo.png"
 
 export const Navbar = () => {
   const [opened, { open, close }] = useDisclosure(false);
-  const { isLoggedIn, setIsLoggedIn, authenticateUser, isAdmin } =
+  const { isLoggedIn, setIsLoggedIn, authenticateUser, isAdmin, currentUser } =
     useContext(AuthContext);
 
   const switchToSignUp = () => setIsLoggedIn(false);
@@ -29,7 +29,7 @@ export const Navbar = () => {
         <div className="navbar-logo">
           <Link to="/">
             <img src= { Logo } alt="logo" className="logo-icon"/>
-            {/* <FontAwesomeIcon icon={faPaw} className="logo-icon" /> */}
+{/* <FontAwesomeIcon icon={faPaw} className="logo-icon" /> */}
             <span className="logo-text">Once Upon a Paw</span>
           </Link>
         </div>
@@ -80,7 +80,16 @@ export const Navbar = () => {
 
           {isLoggedIn ? (
             <div className="user-menu">
-              <span className="user-greeting">Hello!</span>
+              <div className="user-profile-image">
+                {currentUser?.profileImage ? (
+                  <img src={currentUser.profileImage} alt="Profile" />
+                ) : (
+                  <FontAwesomeIcon icon={faUser} className="default-avatar" />
+                )}
+              </div>
+              <span className="user-greeting">
+                Hello{currentUser?.username ? `, ${currentUser.username}` : "!"}
+              </span>
               {isAdmin && (
                 <Link to="/admin" className="admin-link">
                   Admin

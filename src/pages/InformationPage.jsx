@@ -10,7 +10,7 @@ export const InformationPage = () => {
   const { currentUser } = useContext(AuthContext); // Get the current user
   const [showEditForm, setShowEditForm] = useState(false);
   const [editId, setEditId] = useState(null);
-  console.log(articles)
+  // console.log(articles)
   const handleEdit = (articleId) => {
     setEditId(articleId);
     setShowEditForm(true);

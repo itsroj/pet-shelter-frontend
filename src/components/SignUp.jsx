@@ -89,6 +89,7 @@ export const SignUp = ({ onClose, onSwitchToLogin }) => {
         <FileInput
           label="Profile Image"
           placeholder="Upload your profile picture"
+          required
           accept="image/png,image/jpeg,image/jpg"
           className="profile-image-field"
           onChange={setProfileImage}
