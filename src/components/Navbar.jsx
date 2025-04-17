@@ -69,7 +69,16 @@ export const Navbar = () => {
             opened={opened}
             onClose={close}
             title={isLoggedIn ? "Login" : "Sign Up"}
-            classNames={{ title: "modal-title" }}
+            withCloseButton
+            closeOnClickOutside={true}
+            centered={false}
+            position={{ top: 75, right: 20 }}
+            zIndex={1000}
+            styles={{
+              content: {
+                marginTop: 50  // position under the top
+              }
+            }}
           >
             {isLoggedIn ? (
               <Login onClose={close} onSwitchToSignUp={switchToSignUp} />

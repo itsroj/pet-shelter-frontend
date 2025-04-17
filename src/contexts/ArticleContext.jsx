@@ -32,7 +32,7 @@ const ArticleContextWrapper = ({ children }) => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/article/all-articles`)
       .then((res) => {
-        console.log("all articles", res);
+        // console.log("all articles", res);
         setArticles(res.data.allArticles);
         // setError(null);
       })
