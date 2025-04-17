@@ -66,7 +66,7 @@ export const SupportUsPage = () => {
                 <p>Sponsor a kennel, cat room, play yard, or medical treatment area. Your contribution helps maintain and improve these essential spaces.</p>
                 <h3>Corporate Sponsorship</h3>
                 <p>Partner with us as a business to make a significant impact while gaining visibility in the community. Custom sponsorship packages available.</p>
-                <Link to="/pet-adoption" className="btn btn-secondary">
+                <Link to="/pet-adoption" className="btn btn-primary donate-btn">
                   View Animals for Sponsorship
                 </Link>
               </div>

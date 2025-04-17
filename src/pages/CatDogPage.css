@@ -138,7 +138,6 @@
 /* Admin section */
 .admin-add-section {
   margin-top: 50px;
-  padding: 30px;
   background-color: #f5f8f5;
   border-radius: var(--radius);
   border-left: 4px solid var(--accent);
